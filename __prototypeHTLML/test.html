@@ -9,6 +9,11 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+    <link
+      rel="stylesheet"
+      href="../node_modules/weather-icons-npm/css/weather-icons.css"
+    />
+
     <link rel="stylesheet" href="./test.css" />
   </head>
   <body>
@@ -25,16 +30,156 @@
       <main>
         <div class="weather-display">
           <div class="weather-info">
-            <h2>Broken Clouds</h2>
-            <p>Chandigarh , INDIA</p>
-            <p>Thursday, 4th Nov '21 10:44 pm</p>
-            <p>15 °C</p>
+            <div class="weather-stats-container">
+              <h2>Broken Clouds</h2>
+              <p>Chandigarh , INDIA</p>
+              <p>Thursday, 4th Nov '21 10:44 pm</p>
+              <p>15 °C</p>
+              <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+            </div>
+            <div class="type-info-container">
+              <div class="type-info">
+                <div><span class="wi wi-thermometer"></span></div>
+                <div>
+                  <b>Feels Like</b>
+                  <br />
+                  <b style="font-size: x-large">14 °C</b>
+                </div>
+              </div>
+              <div class="type-info">
+                <div><span class="wi wi-humidity"></span></div>
+                <div>
+                  <b>Humidity</b>
+                  <br />
+                  <b style="font-size: x-large">81 %</b>
+                </div>
+              </div>
+              <div class="type-info">
+                <div><span class="wi wi-umbrella"></span></div>
+                <div>
+                  <b>Chance of Rain</b>
+                  <br />
+                  <b style="font-size: x-large">0.93 %</b>
+                </div>
+              </div>
+              <div class="type-info">
+                <div><span class="wi wi-strong-wind"></span></div>
 
-            <i class="material-icons" style="font-size: 48px">wb_sunny </i>
+                <div>
+                  <b>Wind Speed</b>
+                  <br />
+                  <b style="font-size: x-large">12.9 km/h</b>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="weather-forecast">sfd</div>
+          <div class="weather-forecast">
+            <div>
+              <button>Daily</button>
+              <button>Hourly</button>
+            </div>
+            <!-- For Daily -->
+            <!-- <div class="daily-forecast-container">
+              <div class="daily-forecast-info">
+                <h4>MONDAY</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="daily-forecast-info">
+                <h4>MONDAY</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="daily-forecast-info">
+                <h4>MONDAY</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="daily-forecast-info">
+                <h4>MONDAY</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="daily-forecast-info">
+                <h4>MONDAY</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="daily-forecast-info">
+                <h4>MONDAY</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="daily-forecast-info">
+                <h4>MONDAY</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+            </div> -->
+            <!-- For Hourly -->
+            <div class="hourly-forecast-container">
+              <div class="hourly-forecast-info">
+                <h4>9 am</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="hourly-forecast-info">
+                <h4>9 am</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="hourly-forecast-info">
+                <h4>9 am</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="hourly-forecast-info">
+                <h4>9 am</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="hourly-forecast-info">
+                <h4>9 am</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="hourly-forecast-info">
+                <h4>9 am</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="hourly-forecast-info">
+                <h4>9 am</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+              <div class="hourly-forecast-info">
+                <h4>9 am</h4>
+                <span style="font-size: 28px; font-weight: bolder">20 °C</span>
+                <br />
+                <i class="wi wi-night-sleet" style="font-size: 48px"></i>
+              </div>
+            </div>
+          </div>
         </div>
       </main>
+      <footer>
+        <p>Made By <a>C19H3R</a></p>
+      </footer>
     </div>
   </body>
 </html>
