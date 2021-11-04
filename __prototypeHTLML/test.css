@@ -1,0 +1,55 @@
+body {
+  margin: 0;
+}
+
+header {
+  background-color: black;
+  color: white;
+  padding: 10px 20px 10px 20px;
+
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.input-div {
+  display: flex;
+  align-items: center;
+}
+
+.input-div input {
+  font-size: 25px;
+  background-color: transparent;
+  color: white;
+  border-style: unset;
+}
+.input-div input:focus {
+  outline: none;
+}
+.input-div div {
+  border-bottom: 1px solid rgb(199, 199, 199);
+}
+
+main {
+  height: 80vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-image: url(https://media2.giphy.com/media/HvYdoLbPqSdNu/giphy.gif?cid=ecf05e47dp6d9dfw289hz8hvi6k1x0spbr6snyqh6k9jhpvo&rid=giphy.gif&ct=g);
+}
+
+main .weather-display {
+  background-color: rgba(0, 0, 0, 0.411);
+  height: 600px;
+  width: 900px;
+  border-radius: 10px;
+  padding: 10px;
+  backdrop-filter: blur(30px);
+  box-shadow: 10px 10px 10px black;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
