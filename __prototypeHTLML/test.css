@@ -1,11 +1,22 @@
 body {
   margin: 0;
+  font-family: "Oswald";
+}
+.md-48 {
+  font-size: 48px;
+}
+.md-32 {
+  font-size: 32px;
+}
+.md-12 {
+  font-size: 12px;
 }
 
 header {
   background-color: black;
   color: white;
   padding: 10px 20px 10px 20px;
+  font-family: "Audiowide";
 
   display: flex;
   justify-content: space-between;
@@ -37,12 +48,12 @@ main {
   justify-content: center;
   align-items: center;
 
-  background-image: url(https://media3.giphy.com/media/8FJAo2eYFvi0HzeFgF/200.webp?cid=ecf05e47621kcq208o14j1ygy2epcxxoklnyv41gei04o7ig&rid=200.webp&ct=g);
+  background-image: url(https://media4.giphy.com/media/67uxmHhIF3uh6Ph8ew/giphy.gif?cid=ecf05e47pp3xlm32zog5s4yayl40efcufsz8sbscepdq7jua&rid=giphy.gif&ct=g);
 }
 
 main .weather-display {
   background-color: rgba(0, 0, 0, 0.411);
-  height: 500px;
+  /* height: 500px; */
   width: 800px;
   border-radius: 10px;
   padding: 30px;
@@ -52,6 +63,7 @@ main .weather-display {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 50px;
 }
 
 main .weather-display .weather-info {
@@ -62,6 +74,7 @@ main .weather-display .weather-info {
 main .weather-display .weather-info .weather-stats-container {
   display: flex;
   flex-direction: column;
+  gap: 10px;
 }
 main .weather-display .weather-info .type-info-container {
   display: flex;
@@ -75,8 +88,43 @@ main .weather-display .weather-info .type-info-container .type-info {
   gap: 20px;
   text-align: justify;
 }
-main .weather-display .weather-info .type-info-container .type-info span {
-  font-size: 32px;
+
+main .weather-display .weather-forecast .weather-forcast-mode-container {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+main
+  .weather-display
+  .weather-forecast
+  .weather-forcast-mode-container
+  .forecast-mode-btn {
+  background-color: transparent;
+  padding: 10px;
+  border: unset;
+  font-weight: bolder;
+  font-size: 18px;
+  color: rgb(163, 163, 163);
+}
+main
+  .weather-display
+  .weather-forecast
+  .weather-forcast-mode-container
+  .forecast-mode-btn.active {
+  border: 1px solid white;
+  border-radius: 10px;
+  color: white !important;
+}
+
+main
+  .weather-display
+  .weather-forecast
+  .weather-forcast-mode-container
+  .daily-forecast-nav {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  color: rgb(255, 255, 255);
 }
 
 main .weather-display .weather-forecast .daily-forecast-container {
