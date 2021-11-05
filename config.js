@@ -1,0 +1,2 @@
+export const WEATHER_API = "26098981699553ba9549243c7a8ac2da";
+export const GIPHY_API = "Gc7131jiJuvI7IdN0HZ1D7nh0ow5BU6g";
