@@ -1,6 +1,15 @@
-// import "../node_modules/weather-icons-npm/css/weather-icons.min.css";
-import GetRandomGif from "./logic/GetRandomGif";
-import GetWeatherInfo from "./logic/GetWeatherInfo";
+// import FetchRandomGif from "./logic/FetchRandomGif";
+// import FetchWeatherInfo from "./logic/FetchWeatherInfo";
 
-GetWeatherInfo("New York");
-GetRandomGif("Rainy");
+// FetchRandomGif("ThunderStrom").then((val) => {
+//   console.log(val);
+// });
+// FetchWeatherInfo("Mumbai").then((val) => {
+//   console.log(val);
+// });
+
+import Header from "./structure/Header";
+
+const contentDiv = document.getElementById("content");
+
+contentDiv.appendChild(Header());

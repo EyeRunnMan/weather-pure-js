@@ -1,8 +1,12 @@
 import { WEATHER_API } from "../../config";
 
-const GetWeatherInfo = async (cityname) => {
+const FetchWeatherInfo = async (cityname) => {
   const apiUrlByCityName = `https://api.openweathermap.org/data/2.5/weather?q=${cityname}&appid=${WEATHER_API}`;
   const response = await fetch(apiUrlByCityName);
+  const status = await response.status;
+  if (status !== 200) {
+    throw new Error("Something Went Wrong");
+  }
   const data = await response.json();
   const { coord } = data;
 
@@ -45,8 +49,9 @@ const GetWeatherInfo = async (cityname) => {
     hourlyForecast,
     dailyForecast,
   };
-
-  console.log(usefulData);
+  return new Promise((res) => {
+    res(usefulData);
+  });
 };
 
-export default GetWeatherInfo;
+export default FetchWeatherInfo;
