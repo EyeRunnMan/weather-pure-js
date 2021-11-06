@@ -1,3 +1,7 @@
+import ForecastModeSwitcher from "./components/ForecastModeSwitcher";
+import TypeInfoContainer from "./components/TypeInfoContainer";
+import WeatherStats from "./components/WeatherStats";
+
 const WeatherDisplay = () => {
   const mainTag = document.createElement("main");
 
@@ -6,14 +10,19 @@ const WeatherDisplay = () => {
 
   const infoDiv = document.createElement("div");
   infoDiv.classList.add("weather-info");
-  // append stats container
-  // append type info container
+
+  infoDiv.appendChild(WeatherStats());
+  infoDiv.appendChild(TypeInfoContainer());
 
   const forecastDiv = document.createElement("div");
   forecastDiv.classList.add("weather-forecast");
+  forecastDiv.appendChild(ForecastModeSwitcher());
   // append mode changer
   // append hourly or daily forecast
 
+  mainTag.appendChild(displayDiv);
+  displayDiv.appendChild(infoDiv);
+  displayDiv.appendChild(forecastDiv);
   return mainTag;
 };
 

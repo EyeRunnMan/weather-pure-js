@@ -48,16 +48,16 @@ main {
   justify-content: center;
   align-items: center;
 
-  background-image: url(https://media4.giphy.com/media/67uxmHhIF3uh6Ph8ew/giphy.gif?cid=ecf05e47pp3xlm32zog5s4yayl40efcufsz8sbscepdq7jua&rid=giphy.gif&ct=g);
+  /* background-image: url(https://media1.giphy.com/media/3o7bu3XilJ5BOiSGic/200w.webp?cid=ecf05e47aiusq250bsg6b2h02ejq24ob2nr7q9mbpbqr0mgd&rid=200w.webp&ct=g); */
 }
 
 main .weather-display {
-  background-color: rgba(0, 0, 0, 0.411);
+  background-color: rgba(0, 0, 0, 0.801);
   /* height: 500px; */
   width: 800px;
   border-radius: 10px;
   padding: 30px;
-  backdrop-filter: blur(30px);
+  backdrop-filter: blur(5px);
   box-shadow: 10px 10px 10px black;
   color: white;
   display: flex;
@@ -75,6 +75,22 @@ main .weather-display .weather-info .weather-stats-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
+}
+main .weather-display .weather-info .weather-stats-container #weather-type {
+  font-size: 32px;
+}
+main .weather-display .weather-info .weather-stats-container #location-div {
+  display: flex;
+  align-items: center;
+  color: rgb(199, 199, 199);
+}
+main .weather-display .weather-info .weather-stats-container #current-time {
+  width: 125px;
+  font-size: 16px;
+}
+main .weather-display .weather-info .weather-stats-container #current-temp {
+  font-weight: bolder;
+  font-size: 48px;
 }
 main .weather-display .weather-info .type-info-container {
   display: flex;

@@ -9,7 +9,9 @@
 // });
 
 import Header from "./structure/Header";
+import WeatherDisplay from "./structure/WeatherDisplay";
 
 const contentDiv = document.getElementById("content");
 
 contentDiv.appendChild(Header());
+contentDiv.appendChild(WeatherDisplay());
