@@ -145,7 +145,7 @@ main
 
 main .weather-display .weather-forecast .daily-forecast-container {
   display: grid;
-  grid-template-columns: repeat(7, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   text-align: center;
 }
 main .weather-display .weather-forecast .hourly-forecast-container {

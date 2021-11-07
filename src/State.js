@@ -1,15 +1,5 @@
-import Header from "./structure/Header";
-import WeatherDisplay from "./structure/WeatherDisplay";
 import { DAILY_MODE } from "./uitilty/ForecastModes";
-
-const ReloadPage = () => {
-  const contentDiv = document.getElementById("content");
-  while (contentDiv.firstChild) {
-    contentDiv.removeChild(contentDiv.lastChild);
-  }
-  contentDiv.appendChild(Header());
-  contentDiv.appendChild(WeatherDisplay());
-};
+import ReloadPage from "./uitilty/ReloadPage";
 
 // eslint-disable-next-line no-underscore-dangle
 let _weatherData = {};
@@ -32,9 +22,18 @@ const setGiphyImgUrl = (url) => {
 let _forecastMode = DAILY_MODE;
 const getForecastMode = () => _forecastMode;
 const setForecastMode = (mode) => {
-  console.log(mode);
   _forecastMode = mode;
   ReloadPage();
+};
+
+// eslint-disable-next-line no-underscore-dangle
+let _hourlyNavPageNo = 1;
+const getHourlyPageNo = () => _hourlyNavPageNo;
+const setHourlyPageNo = (n) => {
+  if (n <= 3 && n >= 1) {
+    _hourlyNavPageNo = n;
+    ReloadPage();
+  }
 };
 
 export {
@@ -44,4 +43,6 @@ export {
   setGiphyImgUrl,
   getForecastMode,
   setForecastMode,
+  getHourlyPageNo,
+  setHourlyPageNo,
 };

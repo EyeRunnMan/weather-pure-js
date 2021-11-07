@@ -1,4 +1,7 @@
+import { getWeatherData } from "../../State";
+
 const TypeInfoContainer = () => {
+  const { feelsLike, humidity, visibility, windSpeed } = getWeatherData();
   const InfoContainerDiv = document.createElement("div");
   InfoContainerDiv.classList.add("type-info-container");
 
@@ -20,10 +23,22 @@ const TypeInfoContainer = () => {
     return typeInfoDiv;
   };
 
-  const FeelsLikeInfo = InfoDivGenerator("thermometer", "Feels Like", "TODO");
-  const humidityInfo = InfoDivGenerator("humidity", "Humidity", "TODO");
-  const visibilityInfo = InfoDivGenerator("visibility", "Visibility", "TODO");
-  const windSpeedInfo = InfoDivGenerator("strong-wind", "Wind Speed", "TODO");
+  const FeelsLikeInfo = InfoDivGenerator(
+    "thermometer",
+    "Feels Like",
+    feelsLike
+  );
+  const humidityInfo = InfoDivGenerator("humidity", "Humidity", humidity);
+  const visibilityInfo = InfoDivGenerator(
+    "visibility",
+    "Visibility",
+    visibility
+  );
+  const windSpeedInfo = InfoDivGenerator(
+    "strong-wind",
+    "Wind Speed",
+    windSpeed
+  );
 
   InfoContainerDiv.appendChild(FeelsLikeInfo);
   InfoContainerDiv.appendChild(humidityInfo);

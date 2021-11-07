@@ -1,3 +1,5 @@
+import { getWeatherData } from "../../State";
+
 // eslint-disable-next-line no-lone-blocks
 {
   /* <div class="weather-stats-container">
@@ -12,16 +14,23 @@
 </div>; */
 }
 const WeatherStats = () => {
+  const {
+    type,
+    location,
+    currentTime,
+    currentTemperature,
+    currentWeatherIconId,
+  } = getWeatherData();
   const statsDiv = document.createElement("div");
   statsDiv.classList.add("weather-stats-container");
-  statsDiv.innerHTML = `<span id="weather-type">${"TODO"}</span>
+  statsDiv.innerHTML = `<span id="weather-type">${type}</span>
                         <div id="location-div">
                           <span class="material-icons-outlined"> place </span>
-                          <span style="font-size: 18px">${"TODO"}</span>
+                          <span style="font-size: 18px">${location}</span>
                         </div>
-                        <span id="current-time">${"TODO"}</span>
-                        <span id="current-temp">${"TODO"}</span>
-                        <i class="wi wi-night-sleet md-48"></i>`;
+                        <span id="current-time">${currentTime}</span>
+                        <span id="current-temp">${currentTemperature}</span>
+                        <i class="wi wi-owm-${currentWeatherIconId} md-48"></i>`;
 
   return statsDiv;
 };

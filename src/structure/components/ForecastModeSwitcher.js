@@ -1,11 +1,15 @@
-import { getForecastMode, setForecastMode } from "../../State";
+import {
+  getForecastMode,
+  getHourlyPageNo,
+  setForecastMode,
+  setHourlyPageNo,
+} from "../../State";
 import { DAILY_MODE, HOURLY_MODE } from "../../uitilty/ForecastModes";
 
 // eslint-disable-next-line no-lone-blocks
 {
   /* <div class="weather-forcast-mode-container">
-  <button class="forecast-mode-btn">Daily</button>
-  <button class="forecast-mode-btn active">Hourly</button>
+
   <div class="daily-forecast-nav">
     <span class="material-icons"> chevron_left </span>
     <span class="material-icons-outlined md-12"> circle </span>
@@ -45,8 +49,46 @@ const ForecastModeSwitcher = () => {
   modeChangerDiv.appendChild(hourlyModeButton);
 
   if (getForecastMode() === HOURLY_MODE) {
-    return modeChangerDiv;
+    const checkedText = "radio_button_checked";
+    const unCheckedText = "circle";
+    const currentPg = getHourlyPageNo();
+    const hourlyForecastNavDiv = document.createElement("div");
+    hourlyForecastNavDiv.classList.add("daily-forecast-nav");
+
+    const leftArrowSpan = document.createElement("span");
+    leftArrowSpan.classList.add("material-icons");
+    leftArrowSpan.textContent = "chevron_left";
+    leftArrowSpan.addEventListener("click", () => {
+      setHourlyPageNo(currentPg - 1);
+    });
+
+    const firstPageSpan = document.createElement("span");
+    firstPageSpan.classList.add("material-icons-outlined", "md-12");
+    firstPageSpan.textContent = currentPg === 1 ? checkedText : unCheckedText;
+
+    const secondPageSpan = document.createElement("span");
+    secondPageSpan.classList.add("material-icons-outlined", "md-12");
+    secondPageSpan.textContent = currentPg === 2 ? checkedText : unCheckedText;
+
+    const thirdPageSpan = document.createElement("span");
+    thirdPageSpan.classList.add("material-icons-outlined", "md-12");
+    thirdPageSpan.textContent = currentPg === 3 ? checkedText : unCheckedText;
+
+    const rightArrowSpan = document.createElement("span");
+    rightArrowSpan.classList.add("material-icons");
+    rightArrowSpan.textContent = "chevron_right";
+    rightArrowSpan.addEventListener("click", () => {
+      setHourlyPageNo(currentPg + 1);
+    });
+
+    hourlyForecastNavDiv.appendChild(leftArrowSpan);
+    hourlyForecastNavDiv.appendChild(firstPageSpan);
+    hourlyForecastNavDiv.appendChild(secondPageSpan);
+    hourlyForecastNavDiv.appendChild(thirdPageSpan);
+    hourlyForecastNavDiv.appendChild(rightArrowSpan);
+    modeChangerDiv.appendChild(hourlyForecastNavDiv);
   }
+  return modeChangerDiv;
 };
 
 export default ForecastModeSwitcher;
