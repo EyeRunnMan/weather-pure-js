@@ -18,9 +18,9 @@ const FetchWeatherInfo = async (cityname) => {
   hourly.forEach((item, idx) => {
     const { weather, temp, dt } = item;
     const tmpObj = {
-      temperature: temp,
+      temperature: `${parseInt(temp - 273.15)} °C`,
       weatherIconId: weather[0].id,
-      time: "todo",
+      time: "TODO",
     };
     if (idx < 24) {
       hourlyForecast.push(tmpObj);
@@ -30,22 +30,23 @@ const FetchWeatherInfo = async (cityname) => {
   daily.forEach((item) => {
     const { dt, weather, temp } = item;
     const tmpObj = {
-      temperature: temp.day,
+      // (5/9) * (F - 32)
+      temperature: `${parseInt(temp.day - 273.15)} °C`,
       weatherIconId: weather[0].id,
-      day: "todo",
+      day: "TODO",
     };
     dailyForecast.push(tmpObj);
   });
   const usefulData = {
     type: data.weather[0].description,
     location: data.name,
-    currentTime: "TODO",
-    currentTemperature: data.main.temp,
+    currentTime: new Date().toUTCString(),
+    currentTemperature: `${parseInt(data.main.temp - 273.15)} °C`,
     currentWeatherIconId: data.weather[0].id,
-    feelsLike: data.main.feels_like,
-    humidity: data.main.humidity,
-    visibility: data.visibility,
-    windSpeed: data.wind.speed,
+    feelsLike: `${parseInt(data.main.feels_like - 273.15)} °C`,
+    humidity: `${data.main.humidity} %`,
+    visibility: `${data.visibility} mtr`,
+    windSpeed: `${data.wind.speed} km/h`,
     hourlyForecast,
     dailyForecast,
   };

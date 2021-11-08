@@ -75,7 +75,7 @@ main .loading span {
   }
 }
 main .weather-display {
-  background-color: rgba(0, 0, 0, 0.801);
+  background-color: rgba(0, 0, 0, 0.973);
   /* height: 500px; */
   width: 800px;
   border-radius: 10px;
