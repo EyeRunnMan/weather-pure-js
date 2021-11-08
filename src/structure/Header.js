@@ -1,8 +1,9 @@
 import FetchWeatherInfo from "../logic/FetchWeatherInfo";
 import FetchRandomGif from "../logic/FetchRandomGif";
 
-import { setGiphyImgUrl, setWeatherData } from "../State";
+import { setGiphyImgUrl, setRenderMode, setWeatherData } from "../State";
 import AsyncDelay from "../uitilty/AsyncDelay";
+import { DISPLAY_INFO, LOADING } from "../uitilty/RenderMode";
 
 const Header = () => {
   let cityQuery = "";
@@ -21,13 +22,18 @@ const Header = () => {
   cityInputField.type = "text";
   cityInputField.placeholder = "Enter a City";
   cityInputField.addEventListener("change", async (e) => {
-    cityQuery = e.target.value;
-    const data = await FetchWeatherInfo(cityQuery);
-    const gifUrl = await FetchRandomGif(`${data.type} weather`);
-    // await AsyncDelay(2000);
-    setGiphyImgUrl(gifUrl);
-    console.log(gifUrl);
-    setWeatherData(data);
+    try {
+      cityQuery = e.target.value;
+      setRenderMode(LOADING);
+      const data = await FetchWeatherInfo(cityQuery);
+      const gifUrl = await FetchRandomGif(`${data.type} weather`);
+      // await AsyncDelay(2000);
+      setGiphyImgUrl(gifUrl);
+      setWeatherData(data);
+      setRenderMode(DISPLAY_INFO);
+    } catch (error) {
+      alert(error);
+    }
   });
   const searchIcon = document.createElement("i");
   searchIcon.classList.add("material-icons");

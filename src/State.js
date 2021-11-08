@@ -1,5 +1,6 @@
 import { DAILY_MODE } from "./uitilty/ForecastModes";
 import ReloadPage from "./uitilty/ReloadPage";
+import { LOADING } from "./uitilty/RenderMode";
 
 // eslint-disable-next-line no-underscore-dangle
 let _weatherData = {};
@@ -36,6 +37,13 @@ const setHourlyPageNo = (n) => {
   }
 };
 
+// eslint-disable-next-line no-underscore-dangle
+let _renderMode = LOADING;
+const getRenderMode = () => _renderMode;
+const setRenderMode = (mode) => {
+  _renderMode = mode;
+  ReloadPage();
+};
 export {
   getWeatherData,
   setWeatherData,
@@ -45,4 +53,6 @@ export {
   setForecastMode,
   getHourlyPageNo,
   setHourlyPageNo,
+  getRenderMode,
+  setRenderMode,
 };
