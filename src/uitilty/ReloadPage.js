@@ -1,3 +1,4 @@
+import Footer from "../structure/Footer";
 import Header from "../structure/Header";
 import WeatherDisplay from "../structure/WeatherDisplay";
 
@@ -8,6 +9,7 @@ const ReloadPage = () => {
   }
   contentDiv.appendChild(Header());
   contentDiv.appendChild(WeatherDisplay());
+  contentDiv.appendChild(Footer());
 };
 
 export default ReloadPage;

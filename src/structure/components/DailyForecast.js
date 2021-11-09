@@ -1,4 +1,5 @@
 import { getWeatherData } from "../../State";
+import { getDayString } from "../../uitilty/daysOfWeek";
 
 const DailyForecast = () => {
   const { dailyForecast } = getWeatherData();
@@ -16,7 +17,7 @@ const DailyForecast = () => {
   if (dailyForecast !== undefined) {
     dailyForecast.forEach((data) => {
       const tempDaily = createDailyDiv(
-        data.day,
+        getDayString(data.day),
         data.temperature,
         data.weatherIconId
       );

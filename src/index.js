@@ -1,3 +1,5 @@
+import "../node_modules/weather-icons-npm/css/weather-icons.css";
+import "./test.css";
 import FetchRandomGif from "./logic/FetchRandomGif";
 import FetchWeatherInfo from "./logic/FetchWeatherInfo";
 import { setGiphyImgUrl, setRenderMode, setWeatherData } from "./State";
