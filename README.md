@@ -18,3 +18,5 @@ I learned Javascript and later on exploring forntend technologies came across th
 Apart from tech stack i used api from accuweather for current weather and giphty's api to get a random giph according to the weather type.
 
 Also i learned a lot about css and varous css properties such as blur and various js concepts such as asnync await which is used to get data from the above mentioned API's.
+
+P.s : I wrote all of the code which is mentioned in src folder
